@@ -13,32 +13,24 @@ export default function Titles({ darkMode }) {
   const [deleting, setDeleting] = useState(false);
   const [blink, setBlink] = useState(true);
 
-  // Typing / deleting effect
   useEffect(() => {
     if (index >= texts.length) return;
-
     const timeout = setTimeout(() => {
       if (!deleting && subIndex < texts[index].length) setSubIndex(subIndex + 1);
       else if (deleting && subIndex > 0) setSubIndex(subIndex - 1);
       else if (!deleting && subIndex === texts[index].length) setDeleting(true);
       else if (deleting && subIndex === 0) {
         setDeleting(false);
-        setIndex((prev) => (prev + 1) % texts.length);
-      }
-    }, deleting ? 50 : 100);
-
+        setIndex((prev) => (prev + 1) % texts.length);}}, deleting ? 50 : 100);
     return () => clearTimeout(timeout);
   }, [subIndex, deleting, index, texts]);
 
-  
   useEffect(() => {
     const blinkTimeout = setInterval(() => setBlink((prev) => !prev), 500);
     return () => clearInterval(blinkTimeout);
   }, []);
 
-  
-  const animatedColor = darkMode ? "text-emerald-400" : "text-steelblue"; 
-
+  const animatedColor = darkMode ? "text-emerald-400" : "text-emerald-500"; 
   return (
     <div className="flex flex-col items-center w-full mb-12 mt-8">
       {/* Name */}
@@ -46,10 +38,8 @@ export default function Titles({ darkMode }) {
         ${darkMode ? "text-blue-300" : "text-blue-600"}`}>
         Leta Kasahun
       </h1>
-
-     
       <div className="flex items-center space-x-2 text-xl md:text-2xl mb-2 font-medium">
-        <FiSmile className={`${darkMode ? "text-yellow-300" : "text-yellow-500"} text-2xl`} />
+        <FiSmile className={`${darkMode ? "text-yellow-300" : "text-yellow-500"} text-3xl`} />
         <span className={`${darkMode ? "text-gray-300" : "text-slate-700"}`}>Hi there, welcome!</span>
       </div>
 

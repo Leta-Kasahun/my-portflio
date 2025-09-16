@@ -7,7 +7,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(false); // global dark mode
+  const [darkMode, setDarkMode] = useState(false); 
 
   return (
     <div

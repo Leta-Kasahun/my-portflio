@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { CgNametag } from "react-icons/cg";
 import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
-
 export default function Navbar({ darkMode, setDarkMode }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -105,9 +104,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                   ? `${darkMode ? "text-blue-300" : "text-blue-600"} 
                      after:content-[''] after:block after:h-[2px] 
                      ${darkMode ? "after:bg-blue-300" : "after:bg-blue-600"} after:w-full after:mt-1`
-                  : "hover:text-blue-600"}`}
-
-            >
+                  : "hover:text-blue-600"}`}>
               {link.label}
             </a>
           ))}
