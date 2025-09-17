@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Titles from "./Titles";
-import { FiEye } from "react-icons/fi"; // Eye icon for view resume
-import heroImage from "../assets/image.png"; // adjust path
-import resumeFile from "../assets/resume.pdf"; // imported PDF
+import { FiEye, FiBookOpen, FiTrendingUp, FiUsers } from "react-icons/fi"; 
+import heroImage from "../assets/image.png"; 
+import resumeFile from "../assets/resume.pdf"; 
 
 export default function HeroAbout({ darkMode }) {
   const [readMore, setReadMore] = useState(false);
@@ -10,9 +10,21 @@ export default function HeroAbout({ darkMode }) {
   const handleToggle = () => setReadMore(!readMore);
 
   const paragraph =
-    "Motivated Software Engineering student and Full-Stack MERN Developer with experience in frontend, backend, and database development. Skilled in teamwork, adaptability, and OOSAD documentation.";
-  const extraParagraph =
-    " Actively practices coding and problem-solving on platforms like LeetCode to continuously improve skills. Aspiring AI Engineer, passionate about building scalable and efficient AI-based web solutions, and open to new opportunities. Experienced in developing responsive web applications using React, TailwindCSS, Node.js, Express, MongoDB, and integrating APIs. Strong interest in AI, machine learning, and data-driven projects, with hands-on experience in Python and relevant libraries.";
+    "Motivated Software Engineering student and Full-Stack (MERN) Developer with experience in frontend, backend, and database development. Skilled in teamwork, adaptability, and software documentation...";
+  const extraParagraphs = [
+    {
+      icon: <span className="inline mr-3 text-2xl align-top" role="img" aria-label="study">📘</span>,
+      text: "I am currently pursuing my Bachelor’s Degree in Software Engineering at Debre Berhan University (DBU). Alongside my studies, I actively practice coding and problem-solving on platforms like LeetCode to strengthen my skills and stay consistent in my learning journey."
+    },
+    {
+      icon: <span className="inline mr-3 text-2xl align-top" role="img" aria-label="ambition">🚀</span>,
+      text: "My long-term vision is to become a specialist in Artificial Intelligence and Machine Learning. I am especially passionate about algorithms, data-driven projects, and exploring how AI can be applied to build efficient and scalable solutions that solve real-world problems."
+    },
+    {
+      icon: <span className="inline mr-3 text-2xl align-top" role="img" aria-label="progress">🛠️</span>,
+      text: "To achieve this goal, I am continuously improving my Python skills and learning AI-related tools, frameworks, and libraries. I enjoy collaborating with others, sharing knowledge, and working on projects that push me closer to my future career path in AI and ML."
+    }
+  ];
 
   return (
     <section
@@ -53,8 +65,19 @@ export default function HeroAbout({ darkMode }) {
 
          
           <p className="mt-2 text-base md:text-lg leading-relaxed">
-            {paragraph} {readMore && extraParagraph}
+            {paragraph}
+            <br />
           </p>
+          {readMore && (
+            <div className="mt-2 space-y-3">
+              {extraParagraphs.map((para, idx) => (
+                <p key={idx} className="flex items-start leading-relaxed mb-2 text-base md:text-lg">
+                  {para.icon}
+                  <span>{para.text}</span>
+                </p>
+              ))}
+            </div>
+          )}
 
        
           <div className="mt-6 flex flex-wrap gap-4">
@@ -67,7 +90,7 @@ export default function HeroAbout({ darkMode }) {
                   : "bg-blue-600 text-white hover:bg-blue-700"
               }`}
             >
-              {readMore ? "Read Less" : "Read More"}
+              {readMore ? "Show Less" : "More About Me"}
             </button>
 
             {/* View Resume */}
