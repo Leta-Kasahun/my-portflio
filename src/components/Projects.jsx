@@ -12,7 +12,7 @@ export default function Projects({ darkMode }) {
         { icon: <FaReact className="text-blue-500 text-2xl" />, name: "React" },
         { icon: <SiTailwindcss className="text-cyan-500 text-2xl" />, name: "TailwindCSS" },
         { icon: <SiMongodb className="text-green-500 text-2xl" />, name: "MongoDB" },
-        { icon: <FaGithub className="text-gray-700 dark:text-gray-200 text-2xl" />, name: "GitHub", link: "https://github.com/Leta-Kasahun/live-weather-app.git" },
+        { icon: <FaGithub className="text-gray-700 dark:text-gray-600 text-2xl" />, name: "GitHub", link: "https://github.com/Leta-Kasahun/live-weather-app.git" },
       ],
     },
     {
@@ -22,7 +22,7 @@ export default function Projects({ darkMode }) {
       tech: [
         { icon: <FaPython className="text-yellow-500 text-2xl" />, name: "Python" },
         { icon: <SiSqlite className="text-blue-500 text-2xl" />, name: "SQL Server 2014" },
-        { icon: <FaGithub className="text-gray-700 dark:text-gray-200 text-2xl" />, name: "GitHub", link: "https://github.com/Leta-Kasahun/SCMS_python_project.py.git" },
+        { icon: <FaGithub className="text-gray-700 dark:text-gray-600 text-2xl" />, name: "GitHub", link: "https://github.com/Leta-Kasahun/SCMS_python_project.py.git" },
       ],
     },
     {
@@ -32,7 +32,7 @@ export default function Projects({ darkMode }) {
       tech: [
         { icon: <FaReact className="text-blue-500 text-2xl" />, name: "React Vite" },
         { icon: <SiTailwindcss className="text-cyan-500 text-2xl" />, name: "TailwindCSS" },
-        { icon: <FaGithub className="text-gray-700 dark:text-gray-200 text-2xl" />, name: "GitHub", link: "https://github.com/Leta-Kasahun/my-portflio.git" },
+        { icon: <FaGithub className="text-gray-700 dark:text-gray-600 text-2xl" />, name: "GitHub", link: "https://github.com/Leta-Kasahun/my-portflio.git" },
       ],
     },
     {
@@ -43,7 +43,7 @@ export default function Projects({ darkMode }) {
         { icon: <FaJsSquare className="text-yellow-500 text-2xl" />, name: "JavaScript" },
         { icon: <FaHtml5 className="text-orange-500 text-2xl" />, name: "HTML" },
         { icon: <FaCss3Alt className="text-blue-500 text-2xl" />, name: "CSS" },
-        { icon: <FaGithub className="text-gray-700 dark:text-gray-200 text-2xl" />, name: "GitHub", link: "https://github.com/Leta-Kasahun/live-weather-app.git" },
+        { icon: <FaGithub className="text-gray-700 dark:text-gray-600 text-2xl" />, name: "GitHub", link: "https://github.com/Leta-Kasahun/live-weather-app.git" },
       ],
     },
   ];

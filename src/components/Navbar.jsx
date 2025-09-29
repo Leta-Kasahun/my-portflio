@@ -68,22 +68,18 @@ export default function Navbar({ darkMode, setDarkMode }) {
         </div>
       </div>
 
-      {/* Overlay + Drawer */}
       <div>
-        {/* Overlay */}
         <div 
           onClick={() => setMenuOpen(false)} 
           className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity duration-300 
             ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
         ></div>
 
-        {/* Drawer */}
-        <div className={`fixed top-0 right-0 w-3/4 h-screen z-50 flex flex-col 
+        <div className={`fixed top-0 right-0 w-1/2 h-screen z-50 flex flex-col 
           items-center pt-10 space-y-6 text-lg transform transition-transform duration-300 ease-in-out
           ${menuOpen ? "translate-x-0" : "translate-x-full"}
           ${darkMode ? "bg-gray-900 text-gray-300" : "bg-gray-100 text-slate-700"}`}>
 
-          {/* Close Button inside drawer */}
           <button 
             onClick={() => setMenuOpen(false)} 
             className="absolute top-4 right-4 text-3xl focus:outline-none"

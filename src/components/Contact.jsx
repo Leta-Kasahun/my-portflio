@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
-
 export default function Contact({ darkMode }) {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -11,7 +10,6 @@ export default function Contact({ darkMode }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Placeholder: integrate email.js or other service later
     setSubmitted(true);
     setFormData({ name: "", email: "", message: "" });
   };
@@ -62,11 +60,8 @@ export default function Contact({ darkMode }) {
           >
             Send Message
           </button>
-
-          {/* Submitted message */}
           {submitted && <p className="mt-2 text-green-500 font-medium">Message sent successfully!</p>}
 
-          {/* Contact Info below the button */}
           <div className="mt-6 flex flex-col gap-4 text-base">
             <div className="flex items-center gap-3">
               <FaEnvelope className={`${darkMode ? "text-blue-300" : "text-blue-600"} text-xl`} />

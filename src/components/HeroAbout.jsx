@@ -35,9 +35,7 @@ export default function HeroAbout({ darkMode }) {
       
       <Titles darkMode={darkMode} />
 
-      {/* Hero + About */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch gap-8">
-        {/* Hero Image */}
         <div className="flex-1 md:w-1/3 flex justify-center items-stretch">
           <div
             className={`flex-1 rounded-lg shadow-lg overflow-hidden ${
@@ -47,8 +45,6 @@ export default function HeroAbout({ darkMode }) {
             <img src={heroImage} alt="Hero" className="w-full h-full object-cover" />
           </div>
         </div>
-
-        {/* About Section */}
         <div
           className={`flex-1 md:w-2/3 flex flex-col justify-between rounded-lg shadow-lg p-6 ${
             darkMode ? "bg-gray-800" : "bg-white"

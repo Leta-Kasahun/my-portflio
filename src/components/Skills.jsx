@@ -46,10 +46,10 @@ export default function Skills({ darkMode }) {
               key={idx}
               className={`flex flex-col items-center p-6 rounded-2xl shadow-lg backdrop-blur-sm border ${cat.bg} transition-all duration-300 hover:scale-105 hover:shadow-xl`}
             >
-              {/* Title */}
+            
               <h3 className={`text-2xl font-bold mb-4 ${cat.text}`}>{cat.title}</h3>
 
-              {/* Skill Names */}
+           
               <div className="flex flex-wrap justify-center gap-2 mb-4">
                 {cat.skills.map((skill, i) => (
                   <span
@@ -63,7 +63,6 @@ export default function Skills({ darkMode }) {
                 ))}
               </div>
 
-              {/* Progress Bar with Percentage */}
               <div className="relative w-full h-4 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden">
                 <div
                   className={`h-full rounded-full ${cat.text.replace("text", "bg")}`}

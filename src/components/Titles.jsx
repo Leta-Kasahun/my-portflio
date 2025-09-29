@@ -43,7 +43,6 @@ export default function Titles({ darkMode }) {
         <span className={`${darkMode ? "text-gray-300" : "text-slate-700"}`}>Hi there, welcome!</span>
       </div>
 
-      {/* Animated Row */}
       <div className="flex items-center mt-4 text-2xl md:text-4xl font-semibold tracking-wide relative">
         <span className={`${darkMode ? "text-gray-300" : "text-slate-700"} mr-2`}>I am</span>
         <span className={`${animatedColor} relative`}>

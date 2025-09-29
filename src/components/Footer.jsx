@@ -1,5 +1,4 @@
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaTelegram } from "react-icons/fa";
-
 export default function Footer({ darkMode }) {
   const socialLinks = [
     {
@@ -32,11 +31,11 @@ export default function Footer({ darkMode }) {
   return (
     <footer
       className={`${
-        darkMode ? "bg-gray-800 text-gray-300" : "bg-blue-900 text-gray-100"
+        darkMode ? "bg-gray-800 text-gray-300" : "bg-gray-800 text-gray-200"
       } py-8 px-4`}
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center gap-6">
-        {/* Social Icons Only */}
+       
         <div className="flex items-center gap-6">
           {socialLinks.map((social, idx) => (
             <a
@@ -51,7 +50,6 @@ export default function Footer({ darkMode }) {
           ))}
         </div>
 
-        {/* Copyright */}
         <p className="mt-6 text-center text-sm text-gray-400">
           &copy; {new Date().getFullYear()} All rights reserved.
         </p>

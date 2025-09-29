@@ -15,30 +15,21 @@ export default function App() {
         darkMode ? "bg-gray-900 text-gray-300" : "bg-gray-50 text-slate-700"
       } min-h-screen transition-colors duration-300`}
     >
-      {/* Navbar with global darkMode toggle */}
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-
-      {/* Hero + About section */}
       <section id="home">
         <HeroAbout darkMode={darkMode} />
       </section>
 
-      {/* Projects section */}
       <section id="projects">
         <Projects darkMode={darkMode} />
       </section>
 
-      {/* Skills section */}
       <section id="skills">
         <Skills darkMode={darkMode} />
       </section>
-
-      {/* Contact section */}
       <section id="contact">
         <Contact darkMode={darkMode} />
       </section>
-
-      {/* Footer section */}
       <Footer darkMode={darkMode} />
     </div>
   );
