@@ -12,7 +12,7 @@ export default function Projects({ darkMode }) {
         { icon: <FaReact className="text-blue-500 text-2xl" />, name: "React" },
         { icon: <SiTailwindcss className="text-cyan-500 text-2xl" />, name: "TailwindCSS" },
         { icon: <SiMongodb className="text-green-500 text-2xl" />, name: "MongoDB" },
-        { icon: <FaGithub className="text-gray-700 dark:text-gray-600 text-2xl" />, name: "GitHub", link: "https://github.com/Leta-Kasahun/live-weather-app.git" },
+        { icon: <FaGithub className="text-gray-700 dark:text-gray-600 text-2xl" />, name: "GitHub", link: "https://github.com/Leta-Kasahun/mern-task-manager.git" },
       ],
     },
     {
