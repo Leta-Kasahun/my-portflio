@@ -1,4 +1,93 @@
 @import "tailwindcss";
+
+/* Give small space between navbar and hero */
+nav + section#home,
+nav + #home {
+  margin-top: 1.8rem !important;
+  padding-top: 2rem !important;
+}
+
+/* Specifically target HeroAbout section */
+section#about {
+  margin-top: 3rem !important;
+  padding-top: 1.5rem !important;
+}
+
+/* Target the Hero section */
+section#home {
+  margin-top: 1.5rem !important;
+  padding-top: 1rem !important;
+}
+
+/* Only adjust the first section after nav */
+nav ~ section:first-of-type {
+  margin-top: 1.5rem !important;
+  padding-top: 1rem !important;
+}
+
+/* Add spacing between Hero and About sections */
+section#home + section#about {
+  margin-top: 2rem !important;
+  padding-top: 1rem !important;
+}
+
+/* Ensure hero content is visible below navbar */
+#home > *:first-child {
+  margin-top: 1rem !important;
+  padding-top: 0.5rem !important;
+}
+/* Professional font stack - MAX compatibility */
+body, p, span, div, a, button, input, textarea {
+  font-family: 
+    'Inter', 
+    -apple-system,           /* Apple devices worldwide */
+    'Segoe UI',              /* Windows worldwide */
+    'Roboto',                /* Android worldwide */
+    'Helvetica Neue',        /* Fallback for old systems */
+    'Noto Sans',             /* Global script support */
+    Arial,                   /* Universal fallback */
+    sans-serif !important;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11"; /* Professional OpenType features */
+  font-variation-settings: "opsz" 32; /* Optical sizing */
+}
+
+/* Headlines with more impact */
+h1, h2, h3, h4 {
+  font-family: 'Inter', -apple-system, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+}
+
+/* Code and technical text */
+code, pre, .code, kbd, samp {
+  font-family: 
+    'JetBrains Mono', 
+    'Cascadia Code', 
+    'Fira Code', 
+    'SF Mono', 
+    'Consolas', 
+    'Monaco', 
+    monospace !important;
+  font-feature-settings: "calt", "ss01", "ss02", "zero";
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+:root {
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+}
 html {
   scroll-behavior: smooth;
 }

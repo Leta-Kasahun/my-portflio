@@ -2,12 +2,13 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import HeroAbout from "./components/HeroAbout";
 import Projects from "./components/Projects";
+import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(false); 
+  const [darkMode, setDarkMode] = useState(true); 
 
   return (
     <div
@@ -22,6 +23,10 @@ export default function App() {
 
       <section id="projects">
         <Projects darkMode={darkMode} />
+      </section>
+
+      <section id="experience">
+        <Experience darkMode={darkMode} />
       </section>
 
       <section id="skills">

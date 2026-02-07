@@ -1,81 +1,113 @@
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiTailwindcss,
+  SiPython,
+  SiPostgresql,
+  SiMongodb,
+  SiDocker,
+  SiGit,
+  SiOpenjdk,
+  SiSpringboot,
+  SiNextdotjs,
+  SiPostman,
+  SiCplusplus,
+  SiPhp,
+} from "react-icons/si";
+import { FaGithub, FaJava } from "react-icons/fa6";
+import { FaStar, FaRegStar } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+
+function useScrollAnimation(threshold = 0.15) {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), { threshold });
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [threshold]);
+  return [ref, inView];
+}
+
+function Stars({ level }) {
+  return (
+    <div className="flex justify-center mt-2 gap-1">
+      {[...Array(5)].map((_, idx) => (
+        idx < level ? (
+          <FaStar
+            key={idx}
+            className="text-xl md:text-2xl text-yellow-500"
+          />
+        ) : (
+          <FaRegStar
+            key={idx}
+            className="text-xl md:text-2xl text-gray-300 dark:text-gray-600"
+          />
+        )
+      ))}
+    </div>
+  );
+}
+
 export default function Skills({ darkMode }) {
-  const skillCategories = [
-    {
-      title: "Front-end",
-      skills: ["HTML", "CSS", "Tailwindcss", "React", "Next.js", "JavaScript", "TypeScript"],
-      bg: darkMode ? "bg-blue-900/80" : "bg-blue-100/80",
-      text: darkMode ? "text-blue-300" : "text-blue-800",
-      progress: 90
-    },
-    {
-      title: "Back-end",
-      skills: ["Python", "Java", "Node.js", "Express", "PHP", "C++"],
-      bg: darkMode ? "bg-green-900/80" : "bg-green-100/80",
-      text: darkMode ? "text-green-300" : "text-green-800",
-      progress: 85
-    },
-    {
-      title: "Database",
-      skills: ["MySQL", "PostgreSQL", "MongoDB", "Oracle", "SQL Server"],
-      bg: darkMode ? "bg-purple-900/80" : "bg-purple-100/80",
-      text: darkMode ? "text-purple-300" : "text-purple-800",
-      progress: 80
-    },
-    {
-      title: "Tools",
-      skills: ["VSCode", "Git", "GitHub", "Postman", "Canva"],
-      bg: darkMode ? "bg-orange-900/80" : "bg-orange-100/80",
-      text: darkMode ? "text-orange-300" : "text-orange-800",
-      progress: 95
-    },
+  const [sectionRef, sectionInView] = useScrollAnimation(0.1);
+  
+  const skills = [
+    { icon: <SiPython className="text-[#3776AB] text-6xl" />, stars: 4 },
+    { icon: <SiJavascript className="text-[#F7DF1E] text-6xl" />, stars: 4 },
+    { icon: <SiNextdotjs className="text-gray-800 dark:text-gray-300 text-6xl" />, stars: 4 },
+    { icon: <SiHtml5 className="text-[#E34F26] text-6xl" />, stars: 4 },
+    { icon: <SiGit className="text-[#F05032] text-6xl" />, stars: 4 },
+    { icon: <FaGithub className="text-gray-800 dark:text-gray-300 text-6xl" />, stars: 4 },
+    { icon: <FaJava className="text-[#007396] text-6xl" />, stars: 3 },
+    { icon: <SiSpringboot className="text-[#6DB33F] text-6xl" />, stars: 3 },
+    { icon: <SiReact className="text-[#61DAFB] text-6xl" />, stars: 3 },
+    { icon: <SiTypescript className="text-[#007ACC] text-6xl" />, stars: 3 },
+    { icon: <SiTailwindcss className="text-[#06B6D4] text-6xl" />, stars: 3 },
+    { icon: <SiPostgresql className="text-[#336791] text-6xl" />, stars: 3 },
+    { icon: <SiMongodb className="text-[#47A248] text-6xl" />, stars: 3 },
+    { icon: <SiDocker className="text-[#2496ED] text-6xl" />, stars: 3 },
+    { icon: <SiCss3 className="text-[#2965F1] text-6xl" />, stars: 3 },
+    { icon: <SiPostman className="text-[#FF6C37] text-6xl" />, stars: 3 },
+    { icon: <SiCplusplus className="text-[#00599C] text-6xl" />, stars: 3 },
+    { icon: <SiPhp className="text-[#777BB4] text-6xl" />, stars: 3 },
   ];
 
   return (
-    <section
-      id="skills"
-      className={`px-4 py-16 ${darkMode ? "bg-gradient-to-br from-gray-900 to-gray-800 text-gray-300" : "bg-gradient-to-br from-gray-50 to-blue-50 text-slate-700"}`}
+    <motion.section
+      ref={sectionRef}
+      initial={{ opacity: 0, y: 40 }}
+      animate={sectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+      className={`px-4 py-16 ${darkMode ? "bg-gradient-to-br from-gray-900 to-gray-800" : "bg-gradient-to-br from-gray-50 to-blue-50"}`}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <h2 className={`text-4xl md:text-5xl font-extrabold text-center mb-12 ${darkMode ? "text-blue-300" : "text-blue-600"}`}>
           My Skills
         </h2>
-
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-          {skillCategories.map((cat, idx) => (
-            <div
-              key={idx}
-              className={`flex flex-col items-center p-6 rounded-2xl shadow-lg backdrop-blur-sm border ${cat.bg} transition-all duration-300 hover:scale-105 hover:shadow-xl`}
+        <div className="grid gap-8 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+          {skills.map((skill, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              animate={sectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+              className={`flex flex-col items-center p-6 rounded-2xl shadow-lg border ${
+                darkMode 
+                  ? "bg-gray-800/80 backdrop-blur-[4px] border-gray-700 hover:bg-gray-700/80" 
+                  : "bg-white/90 backdrop-blur-[4px] border-gray-200 hover:bg-white"
+              } hover:scale-105 hover:shadow-xl transition-all duration-300`}
             >
-            
-              <h3 className={`text-2xl font-bold mb-4 ${cat.text}`}>{cat.title}</h3>
-
-           
-              <div className="flex flex-wrap justify-center gap-2 mb-4">
-                {cat.skills.map((skill, i) => (
-                  <span
-                    key={i}
-                    className={`px-3 py-1 rounded-full font-semibold text-sm transition-all duration-300 
-                      ${darkMode ? "bg-gray-800/70 text-gray-100 hover:bg-gray-700 hover:shadow-lg" : "bg-white/80 text-gray-800 hover:bg-white hover:shadow-md"} 
-                      hover:-translate-y-1 cursor-default`}
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-
-              <div className="relative w-full h-4 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden">
-                <div
-                  className={`h-full rounded-full ${cat.text.replace("text", "bg")}`}
-                  style={{ width: `${cat.progress}%` }}
-                ></div>
-                <span className={`absolute right-2 top-0 text-sm font-semibold ${cat.text}`}>
-                  {cat.progress}%
-                </span>
-              </div>
-            </div>
+              {skill.icon}
+              <Stars level={skill.stars} />
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
