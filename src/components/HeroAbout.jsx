@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 import heroImage from "../assets/image.png";
 import resumeFile from "../assets/resume.pdf";
-import Hero from "./Titles";
+import Hero from "./Hero";
 
 function useSectionInView(threshold = 0.40) {
   const ref = useRef(null);

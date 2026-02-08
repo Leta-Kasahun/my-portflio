@@ -63,12 +63,12 @@ export default function Skills({ darkMode }) {
     { icon: <SiHtml5 className="text-[#E34F26] text-6xl" />, stars: 4 },
     { icon: <SiGit className="text-[#F05032] text-6xl" />, stars: 4 },
     { icon: <FaGithub className="text-gray-800 dark:text-gray-300 text-6xl" />, stars: 4 },
+    { icon: <SiTypescript className="text-[#007ACC] text-6xl" />, stars: 4 },
+    { icon: <SiPostgresql className="text-[#336791] text-6xl" />, stars: 4 },
     { icon: <FaJava className="text-[#007396] text-6xl" />, stars: 3 },
     { icon: <SiSpringboot className="text-[#6DB33F] text-6xl" />, stars: 3 },
     { icon: <SiReact className="text-[#61DAFB] text-6xl" />, stars: 3 },
-    { icon: <SiTypescript className="text-[#007ACC] text-6xl" />, stars: 3 },
     { icon: <SiTailwindcss className="text-[#06B6D4] text-6xl" />, stars: 3 },
-    { icon: <SiPostgresql className="text-[#336791] text-6xl" />, stars: 3 },
     { icon: <SiMongodb className="text-[#47A248] text-6xl" />, stars: 3 },
     { icon: <SiDocker className="text-[#2496ED] text-6xl" />, stars: 3 },
     { icon: <SiCss3 className="text-[#2965F1] text-6xl" />, stars: 3 },
@@ -86,9 +86,14 @@ export default function Skills({ darkMode }) {
       className={`px-4 py-16 ${darkMode ? "bg-gradient-to-br from-gray-900 to-gray-800" : "bg-gradient-to-br from-gray-50 to-blue-50"}`}
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className={`text-4xl md:text-5xl font-extrabold text-center mb-12 ${darkMode ? "text-blue-300" : "text-blue-600"}`}>
-          My Skills
-        </h2>
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-14 md:mb-16" style={{
+        fontWeight: 900,
+        letterSpacing: '-0.025em',
+        background: 'linear-gradient(135deg, #3B82F6 0%, #6366F1 50%, #8B5CF6 100%)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        backgroundClip: 'text',
+      }}>My Skills</h2>
         <div className="grid gap-8 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
           {skills.map((skill, i) => (
             <motion.div
