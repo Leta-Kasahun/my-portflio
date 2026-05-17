@@ -61,16 +61,11 @@ export default function Navbar({ darkMode = true, setDarkMode }) {
               <motion.span 
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="text-3xl font-black tracking-tighter"
+                className="text-3xl font-black tracking-tighter text-blue-600 dark:text-blue-500"
                 style={{
-                  fontFamily: "'Inter', -apple-system, sans-serif",
                   fontWeight: 900,
                   letterSpacing: '-0.04em',
-                  background: 'linear-gradient(135deg, #3B82F6 0%, #6366F1 50%, #8B5CF6 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  textShadow: '0 2px 24px rgba(99, 102, 241, 0.3)',
+                  textShadow: '0 2px 24px rgba(37, 99, 235, 0.3)',
                 }}
               >
                 LETA K.
@@ -90,7 +85,6 @@ export default function Navbar({ darkMode = true, setDarkMode }) {
                   href={`#${link.id}`}
                   onClick={() => setActive(link.id)}
                   className="relative group"
-                  style={{ fontFamily: "'Inter', -apple-system, sans-serif" }}
                 >
                   <motion.div
                     className="absolute -inset-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -237,7 +231,6 @@ export default function Navbar({ darkMode = true, setDarkMode }) {
               className={`relative text-2xl font-medium transition-all duration-400 pl-8 py-4 rounded-xl w-4/5
                 ${active === link.id ? 'text-white font-semibold' : 'text-gray-300 hover:text-white'}`}
               style={{
-                fontFamily: "'Inter', -apple-system, sans-serif",
                 fontWeight: active === link.id ? 600 : 500,
                 letterSpacing: '-0.01em',
                 backdropFilter: active === link.id ? 'blur(12px)' : 'none',

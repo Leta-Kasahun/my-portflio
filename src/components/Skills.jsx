@@ -86,13 +86,9 @@ export default function Skills({ darkMode }) {
       className={`px-4 py-16 ${darkMode ? "bg-gradient-to-br from-gray-900 to-gray-800" : "bg-gradient-to-br from-gray-50 to-blue-50"}`}
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-14 md:mb-16" style={{
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-14 md:mb-16 text-blue-600 dark:text-blue-500" style={{
         fontWeight: 900,
         letterSpacing: '-0.025em',
-        background: 'linear-gradient(135deg, #3B82F6 0%, #6366F1 50%, #8B5CF6 100%)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        backgroundClip: 'text',
       }}>My Skills</h2>
         <div className="grid gap-8 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
           {skills.map((skill, i) => (

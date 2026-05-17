@@ -57,20 +57,15 @@ export default function Contact({ darkMode }) {
       animate={sectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
       className={`${darkMode ? "bg-gradient-to-br from-gray-900 to-gray-900" : "bg-gradient-to-br from-gray-50 to-blue-50"} px-4 py-20`}
-      style={{ fontFamily: "'Inter', -apple-system, sans-serif" }}
     >
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={sectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.8, delay: 0.1 }}
-        className="text-4xl md:text-5xl font-extrabold text-center mb-16"
+        className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-blue-600 dark:text-blue-500"
         style={{
           fontWeight: 900,
           letterSpacing: '-0.025em',
-          background: 'linear-gradient(135deg, #3B82F6 0%, #6366F1 50%, #8B5CF6 100%)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text',
         }}
       >
         Contact Me
@@ -91,12 +86,11 @@ export default function Contact({ darkMode }) {
             value={formData.name}
             onChange={handleChange}
             required
-            className={`p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-lg
+            className={`p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-lg font-normal
               ${darkMode
                 ? "bg-gray-800/70 backdrop-blur-sm border-gray-700 text-gray-200 placeholder-gray-400 hover:border-blue-500/50"
                 : "bg-white/90 backdrop-blur-sm border-gray-300 text-gray-800 placeholder-gray-500 hover:border-blue-400"
               }`}
-            style={{ fontFamily: "'Inter', -apple-system, sans-serif", fontWeight: 400 }}
           />
           <input
             type="email"
@@ -105,12 +99,11 @@ export default function Contact({ darkMode }) {
             value={formData.email}
             onChange={handleChange}
             required
-            className={`p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-lg
+            className={`p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-lg font-normal
               ${darkMode
                 ? "bg-gray-800/70 backdrop-blur-sm border-gray-700 text-gray-200 placeholder-gray-400 hover:border-blue-500/50"
                 : "bg-white/90 backdrop-blur-sm border-gray-300 text-gray-800 placeholder-gray-500 hover:border-blue-400"
               }`}
-            style={{ fontFamily: "'Inter', -apple-system, sans-serif", fontWeight: 400 }}
           />
           <textarea
             name="message"
@@ -119,24 +112,19 @@ export default function Contact({ darkMode }) {
             onChange={handleChange}
             required
             rows={6}
-            className={`p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-lg
+            className={`p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-lg font-normal leading-relaxed
               ${darkMode
                 ? "bg-gray-800/70 backdrop-blur-sm border-gray-700 text-gray-200 placeholder-gray-400 hover:border-blue-500/50"
                 : "bg-white/90 backdrop-blur-sm border-gray-300 text-gray-800 placeholder-gray-500 hover:border-blue-400"
               }`}
-            style={{ fontFamily: "'Inter', -apple-system, sans-serif", fontWeight: 400, lineHeight: 1.6 }}
           />
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             type="submit"
-            className="mt-4 px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="mt-4 px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300 shadow-lg hover:shadow-xl bg-blue-600 hover:bg-blue-700 text-lg"
             style={{
-              background: 'linear-gradient(135deg, #3B82F6 0%, #6366F1 100%)',
-              fontFamily: "'Inter', -apple-system, sans-serif",
-              fontWeight: 600,
               letterSpacing: '0.02em',
-              fontSize: '1.1rem',
             }}
           >
             Send Message
@@ -146,7 +134,6 @@ export default function Contact({ darkMode }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               className="mt-4 text-green-500 font-medium text-lg text-center"
-              style={{ fontFamily: "'Inter', -apple-system, sans-serif", fontWeight: 500 }}
             >
               Message sent successfully!
             </motion.p>
@@ -156,28 +143,28 @@ export default function Contact({ darkMode }) {
             initial={{ opacity: 0 }}
             animate={sectionInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-10 flex flex-col gap-5 text-lg"
+            className="mt-10 flex flex-col gap-5 text-lg font-medium"
           >
             <div className="flex items-center gap-4 p-4 rounded-xl" style={{
               background: darkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.08)',
               border: `1px solid ${darkMode ? 'rgba(59, 130, 246, 0.2)' : 'rgba(59, 130, 246, 0.15)'}`
             }}>
               <FaEnvelope className="text-blue-500 text-2xl" />
-              <span style={{ fontFamily: "'Inter', -apple-system, sans-serif", fontWeight: 500 }}>letakasahun2@gmail.com</span>
+              <span>letakasahun2@gmail.com</span>
             </div>
             <div className="flex items-center gap-4 p-4 rounded-xl" style={{
               background: darkMode ? 'rgba(34, 197, 94, 0.1)' : 'rgba(34, 197, 94, 0.08)',
               border: `1px solid ${darkMode ? 'rgba(34, 197, 94, 0.2)' : 'rgba(34, 197, 94, 0.15)'}`
             }}>
               <FaPhone className="text-green-500 text-2xl" />
-              <span style={{ fontFamily: "'Inter', -apple-system, sans-serif", fontWeight: 500 }}>+251 923 695 611</span>
+              <span>+251 923 695 611</span>
             </div>
             <div className="flex items-center gap-4 p-4 rounded-xl" style={{
               background: darkMode ? 'rgba(239, 68, 68, 0.1)' : 'rgba(239, 68, 68, 0.08)',
               border: `1px solid ${darkMode ? 'rgba(239, 68, 68, 0.2)' : 'rgba(239, 68, 68, 0.15)'}`
             }}>
               <FaMapMarkerAlt className="text-red-500 text-2xl" />
-              <span style={{ fontFamily: "'Inter', -apple-system, sans-serif", fontWeight: 500 }}>Debre Birhan, Ethiopia</span>
+              <span>Debre Birhan, Ethiopia</span>
             </div>
           </motion.div>
         </motion.form>

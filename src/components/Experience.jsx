@@ -29,6 +29,14 @@ export default function Experience({ darkMode }) {
     {
       icon: <FaCode />,
       title: "Full-Stack Development Intern",
+      duration: "Mar 2026 – Apr 2026",
+      company: "Future Intern",
+      description:
+        "Worked as a Full-Stack Development Intern, designing and developing Bondex, a modern CRM platform for lead management and business communication. Built scalable frontend interfaces and backend APIs using structured architecture, implemented authentication workflows, integrated external communication services, and optimized modular system design for maintainability and performance.",
+    },
+    {
+      icon: <FaCode />,
+      title: "Full-Stack Development Intern",
       duration: "Nov 2025 – Dec 2025",
       company: "CodeAlpha",
       description: "Developed full-stack Social Media and E-commerce applications using Next.js, Express, MongoDB, and Tailwind CSS. Implemented Google Authentication, email notifications, and RESTful APIs with secure database integration.",
@@ -51,7 +59,7 @@ export default function Experience({ darkMode }) {
 
   const iconSizeMobile = "w-10 h-10";
   const iconSizeDesktop = "md:w-12 md:h-12";
-  const iconCircle = `absolute left-4 md:left-1/2 md:-translate-x-1/2 z-20 flex items-center justify-center
+  const iconCircle = `absolute left-0 md:left-1/2 md:-translate-x-1/2 z-20 flex items-center justify-center
     ${iconSizeMobile} ${iconSizeDesktop}
     rounded-full border-4 ${darkMode ? "bg-blue-600 border-gray-900" : "bg-blue-600 border-gray-50"}`;
   const iconContent = "text-white text-xl md:text-2xl";
@@ -66,15 +74,10 @@ export default function Experience({ darkMode }) {
       animate={sectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
       className={`${darkMode ? "bg-gray-900 text-gray-300" : "bg-gray-50 text-slate-700"} px-4 py-16 md:py-20`}
-      style={{ fontFamily: "'Inter', -apple-system, sans-serif" }}
     >
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-14 md:mb-16" style={{
+      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-14 md:mb-16 text-blue-600 dark:text-blue-500" style={{
         fontWeight: 900,
         letterSpacing: '-0.025em',
-        background: 'linear-gradient(135deg, #3B82F6 0%, #6366F1 50%, #8B5CF6 100%)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        backgroundClip: 'text',
       }}>Experience</h2>
       <div className="max-w-5xl mx-auto relative">
         <div className="hidden md:block absolute w-0.5 z-0" style={{
@@ -98,27 +101,28 @@ export default function Experience({ darkMode }) {
           {experiences.map((exp, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              animate={sectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.22, 1, 0.36, 1] }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="relative"
             >
               <div className={iconCircle + " top-0 -translate-y-1/2"}><div className={iconContent}>{exp.icon}</div></div>
               <div className={`pl-16 md:pl-0 ${idx % 2 === 0 
                 ? 'md:mr-auto md:pr-8 md:pl-0 md:w-[46%] md:text-right' 
                 : 'md:ml-auto md:pl-8 md:pr-0 md:w-[46%]'}`}>
-                <div className={`flex items-center gap-1 mb-2 font-semibold text-sm md:text-base ${darkMode ? "text-blue-300" : "text-blue-600"} ${idx % 2 === 0 ? 'md:justify-end' : ''}`} style={{ fontWeight: 600 }}>
+                <div className={`flex items-center gap-1 mb-2 font-semibold text-sm md:text-base ${darkMode ? "text-blue-300" : "text-blue-600"} ${idx % 2 === 0 ? 'md:justify-end' : ''}`}>
                   <span><AiOutlineCalendar className="text-sm md:text-base" /></span>
                   <span>{exp.duration}</span>
                 </div>
-                <div className={`mb-2 text-base md:text-lg font-medium ${darkMode ? "text-gray-300" : "text-gray-700"} ${idx % 2 === 0 ? 'md:text-right' : ''}`} style={{ fontWeight: 500 }}>
+                <div className={`mb-2 text-base md:text-lg font-medium ${darkMode ? "text-gray-300" : "text-gray-700"} ${idx % 2 === 0 ? 'md:text-right' : ''}`}>
                   {exp.company}
                 </div>
-                <h3 className={`text-lg md:text-xl font-bold mb-3 break-words ${darkMode ? "text-white" : "text-gray-900"}`} style={{ fontWeight: 700, letterSpacing: '-0.01em' }}>
+                <h3 className={`text-xl md:text-2xl font-bold mb-3 break-words ${darkMode ? "text-white" : "text-gray-900"}`}>
                   {exp.title}
                 </h3>
                 <div className={`p-4 md:p-5 rounded-lg ${darkMode ? "bg-gray-800/40" : "bg-gray-100/80"}`}>
-                  <p className="text-justify text-sm md:text-base leading-relaxed break-words" style={{ fontWeight: 400, lineHeight: 1.7 }}>
+                  <p className="text-left text-base md:text-lg leading-relaxed break-words">
                     {exp.description}
                   </p>
                 </div>
