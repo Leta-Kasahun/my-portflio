@@ -11,7 +11,7 @@ export default function HeroAbout({ darkMode }) {
   const more = ", I am expanding my skills in Kubernetes for cloud-native apps. Aspiring to specialize in AI and build scalable progressive web apps that solve real-world problems. Highly motivated, adaptable, and open to new opportunities where I can contribute to meaningful projects while growing as a software engineer.";
 
   return (
-    <section id="about" className={`mt-32 pt-20 px-0 pb-20 md:pb-24 ${darkMode ? "bg-gradient-to-br from-gray-900 to-gray-900" : "bg-gradient-to-br from-gray-50 to-blue-50"}`}>
+    <section id="about" className={`mt-32 pt-20 px-4 sm:px-6 md:px-10 pb-20 md:pb-24 ${darkMode ? "bg-gradient-to-br from-gray-900 to-gray-900" : "bg-gradient-to-br from-gray-50 to-blue-50"}`}>
       <Hero darkMode={darkMode} />
       <motion.div
         initial={{ opacity: 0, y: 12 }}
@@ -83,11 +83,10 @@ export default function HeroAbout({ darkMode }) {
             </h2>
           </div>
           <div 
-            className="text-lg leading-relaxed text-left"
+            className="text-lg leading-relaxed text-left p-6 sm:p-8 md:p-10"
             style={{
               background: darkMode ? "rgba(17, 24, 39, 0.85)" : "#f3f6fb",
               borderRadius: 24,
-              padding: "2.4rem 2.2rem",
               color: darkMode ? "#f1f5f9" : "#1e293b",
                 fontWeight: 400,
                 letterSpacing: '0.01em',

@@ -60,7 +60,7 @@ export default function Projects({ darkMode }) {
       initial={{ opacity: 0, y: 40 }}
       animate={sectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-      className={`${darkMode ? "bg-gray-900 text-gray-300" : "bg-gray-50 text-slate-700"} px-4 py-20`}
+      className={`${darkMode ? "bg-gray-900 text-gray-300" : "bg-gray-50 text-slate-700"} px-4 sm:px-6 md:px-10 py-20`}
     >
       <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-blue-600 dark:text-blue-500" style={{
         fontWeight: 900, letterSpacing: '-0.025em',

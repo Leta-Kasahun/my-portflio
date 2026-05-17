@@ -50,7 +50,7 @@ export default function Navbar({ darkMode = true, setDarkMode }) {
   return (
     <nav className="w-full fixed top-0 z-50" style={{ margin: 0, padding: 0 }}>
       <div className="w-full transition-all duration-500 ease-out" style={glassStyle}>
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-10 py-5">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 md:px-10 py-5">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -72,7 +72,7 @@ export default function Navbar({ darkMode = true, setDarkMode }) {
               </motion.span>
             </a>
           </motion.div>
-
+ 
           <div className="hidden lg:flex items-center gap-16">
             {navLinks.map((link, index) => (
               <motion.div
@@ -111,7 +111,7 @@ export default function Navbar({ darkMode = true, setDarkMode }) {
                     {link.label}
                     {active === link.id && (
                       <motion.div
-                        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-10 h-0.5 rounded-full"
+                        className="absolute bottom-0 left-1/2 -translate-y-1/2 w-10 h-0.5 rounded-full"
                         style={{
                           background: 'linear-gradient(90deg, #3B82F6, #6366F1)',
                           boxShadow: '0 0 12px rgba(99, 102, 241, 0.4)',
@@ -124,7 +124,7 @@ export default function Navbar({ darkMode = true, setDarkMode }) {
               </motion.div>
             ))}
           </div>
-
+ 
           <div className="flex items-center gap-8">
             <motion.button 
               onClick={toggleDarkMode}
@@ -160,7 +160,7 @@ export default function Navbar({ darkMode = true, setDarkMode }) {
                 )}
               </div>
             </motion.button>
-
+ 
             <motion.button 
               onClick={toggleMenu}
               whileHover={{ scale: 1.08 }}
@@ -186,7 +186,7 @@ export default function Navbar({ darkMode = true, setDarkMode }) {
           </div>
         </div>
       </div>
-
+ 
       <div>
         <div 
           onClick={() => setMenuOpen(false)} 
@@ -197,12 +197,12 @@ export default function Navbar({ darkMode = true, setDarkMode }) {
             backgroundColor: 'rgba(0, 0, 0, 0.4)',
           }}
         ></div>
-
+ 
         <motion.div 
           initial={false}
           animate={{ x: menuOpen ? 0 : 400 }}
           transition={{ type: "spring", damping: 30, stiffness: 300, mass: 0.8 }}
-          className="fixed top-0 right-0 w-96 h-screen z-50 flex flex-col items-start pt-32 pl-14 space-y-8"
+          className="fixed top-0 right-0 w-[280px] sm:w-96 h-screen z-50 flex flex-col items-start pt-32 pl-10 sm:pl-14 space-y-8"
           style={mobileMenuStyle}
         >
           <motion.button 

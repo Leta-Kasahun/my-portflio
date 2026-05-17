@@ -1,58 +1,90 @@
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaTelegram } from "react-icons/fa";
+import { motion } from "framer-motion";
+
 export default function Footer({ darkMode }) {
   const socialLinks = [
     {
-      icon: <FaLinkedin className="text-2xl" />,
+      icon: <FaLinkedin className="text-xl" />,
       href: "https://www.linkedin.com/in/Lkasahun",
-      hoverColor: "hover:text-blue-400",
     },
     {
-      icon: <FaInstagram className="text-2xl" />,
+      icon: <FaInstagram className="text-xl" />,
       href: "https://www.instagram.com/leta_kasahun",
-      hoverColor: "hover:text-pink-400",
     },
     {
-      icon: <FaTwitter className="text-2xl" />,
+      icon: <FaTwitter className="text-xl" />,
       href: "https://twitter.com/Lkasahun4",
-      hoverColor: "hover:text-blue-300",
     },
     {
-      icon: <FaGithub className="text-2xl" />,
+      icon: <FaGithub className="text-xl" />,
       href: "https://github.com/Leta-Kasahun",
-      hoverColor: "hover:text-coral-500",
     },
     {
-      icon: <FaTelegram className="text-2xl" />,
+      icon: <FaTelegram className="text-xl" />,
       href: "https://t.me/letakasahun",
-      hoverColor: "hover:text-blue-500",
     },
   ];
 
   return (
     <footer
-      className={`${
-        darkMode ? "bg-gray-800 text-gray-300" : "bg-gray-800 text-gray-200"
-      } py-8 px-4`}
+      className={`py-12 px-4 border-t transition-colors duration-500
+        ${darkMode 
+          ? "bg-gray-900 text-gray-300 border-gray-800/80" 
+          : "bg-gray-50 text-slate-700 border-slate-200"}`}
     >
-      <div className="max-w-7xl mx-auto flex flex-col items-center gap-6">
-       
-        <div className="flex items-center gap-6">
+      <div className="max-w-7xl mx-auto flex flex-col items-center gap-8">
+        
+        {/* Branding Title */}
+        <div className="flex flex-col items-center gap-1.5">
+          <span 
+            className="text-2xl font-black tracking-tighter text-blue-600 dark:text-blue-500"
+            style={{
+              fontWeight: 900,
+              letterSpacing: '-0.04em',
+              textShadow: '0 2px 20px rgba(37, 99, 235, 0.2)',
+            }}
+          >
+            LETA K.
+          </span>
+          <span className="text-sm font-semibold tracking-wide uppercase opacity-75">
+            Software Engineer & Full-Stack Developer
+          </span>
+        </div>
+
+        {/* Social Connections */}
+        <div className="flex items-center gap-4">
           {socialLinks.map((social, idx) => (
-            <a
+            <motion.a
               key={idx}
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`transition-colors duration-200 ${social.hoverColor}`}
+              whileHover={{ scale: 1.1, y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              className={`p-3 rounded-full border transition-all duration-300 ${
+                darkMode 
+                  ? "border-gray-800 bg-gray-900/40 text-gray-400 hover:border-blue-500/50 hover:text-blue-400 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]"
+                  : "border-slate-200 bg-white text-slate-500 hover:border-blue-500/50 hover:text-blue-600 hover:shadow-[0_0_15px_rgba(37,99,235,0.1)]"
+              }`}
             >
               {social.icon}
-            </a>
+            </motion.a>
           ))}
         </div>
 
-        <p className="mt-6 text-center text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} All rights reserved.
-        </p>
+        {/* Decorative Divider */}
+        <div className="h-px w-full max-w-xl bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
+
+        {/* Crafting Tagline & Copyright */}
+        <div className="flex flex-col items-center gap-2 max-w-md">
+          <p className="text-center text-sm opacity-80 leading-relaxed font-medium">
+            Crafting seamless full-stack applications with clean structure and premium user experience.
+          </p>
+          <p className="text-center text-xs opacity-60 mt-1">
+            &copy; {new Date().getFullYear()} Leta Kasahun. All rights reserved.
+          </p>
+        </div>
+
       </div>
     </footer>
   );

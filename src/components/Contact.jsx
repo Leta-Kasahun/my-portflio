@@ -56,7 +56,7 @@ export default function Contact({ darkMode }) {
       initial={{ opacity: 0, y: 40 }}
       animate={sectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-      className={`${darkMode ? "bg-gradient-to-br from-gray-900 to-gray-900" : "bg-gradient-to-br from-gray-50 to-blue-50"} px-4 py-20`}
+      className={`${darkMode ? "bg-gradient-to-br from-gray-900 to-gray-900" : "bg-gradient-to-br from-gray-50 to-blue-50"} px-4 sm:px-6 md:px-10 py-20`}
     >
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
