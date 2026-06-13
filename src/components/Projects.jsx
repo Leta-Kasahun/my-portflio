@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { AiFillGithub, AiOutlineEye } from "react-icons/ai";
 import { FaReact, FaNodeJs, FaJava, FaPython, FaCode } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
-import LazyImage from "./LazyImage";
 import {
   SiTailwindcss,
   SiMongodb,
@@ -47,9 +46,41 @@ const techIconMap = {
 
 const normalizeTech = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, "");
 
-const imageAspect = "aspect-[16/10]";
+// Gradient accent per primary tech
+const techGradients = {
+  nextjs:      "from-gray-800 via-gray-700 to-gray-900",
+  react:       "from-blue-900 via-cyan-800 to-blue-950",
+  springboot:  "from-green-900 via-emerald-800 to-green-950",
+  typescript:  "from-blue-800 via-indigo-800 to-blue-950",
+  nodejs:      "from-green-800 via-teal-800 to-green-950",
+  python:      "from-yellow-800 via-amber-800 to-yellow-950",
+  mongodb:     "from-green-900 via-green-700 to-green-950",
+  postgresql:  "from-sky-900 via-blue-800 to-sky-950",
+  php:         "from-indigo-900 via-purple-800 to-indigo-950",
+  default:     "from-gray-800 via-blue-900 to-gray-900",
+};
 
-const importImg = name => new URL(`/src/assets/${name}`, import.meta.url).href;
+function ProjectBanner({ techStack, title }) {
+  const key = normalizeTech(techStack?.[0] || "");
+  const gradient = techGradients[key] || techGradients.default;
+  const PrimaryIcon = techIconMap[key] ? techIconMap[key] : null;
+
+  return (
+    <div className={`w-full aspect-[16/9] bg-gradient-to-br ${gradient} flex flex-col items-center justify-center gap-3 relative overflow-hidden`}>
+      {/* Decorative circles */}
+      <div className="absolute top-[-20%] right-[-10%] w-40 h-40 rounded-full bg-white/5 blur-2xl" />
+      <div className="absolute bottom-[-20%] left-[-10%] w-48 h-48 rounded-full bg-white/5 blur-2xl" />
+      {PrimaryIcon && (
+        <span className="text-5xl opacity-70 z-10">
+          {PrimaryIcon}
+        </span>
+      )}
+      <span className="text-white/60 text-xs font-semibold tracking-widest uppercase z-10">
+        {techStack?.[0] || "Project"}
+      </span>
+    </div>
+  );
+}
 
 export default function Projects({ darkMode }) {
   const [sectionRef, sectionInView] = useScrollAnimation(0.1);
@@ -75,14 +106,7 @@ export default function Projects({ darkMode }) {
             className={`flex flex-col shadow-md rounded-2xl overflow-hidden transition-all duration-300 group border border-transparent hover:border-blue-400/30
               ${darkMode ? "bg-gray-800/60" : "bg-white/90"}`}
           >
-            <div className={`w-full ${imageAspect} overflow-hidden ${darkMode ? "bg-gray-900/30" : "bg-slate-50"}`}>
-              <LazyImage
-                src={importImg(project.image)}
-                alt={`${project.title} screenshot`}
-                wrapperClassName="w-full h-full flex items-center justify-center"
-                imgClassName="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-[1.02]"
-              />
-            </div>
+            <ProjectBanner techStack={project.techStack} title={project.title} />
             <div className="flex flex-col flex-1 p-6">
               <h3 className="text-xl md:text-2xl font-bold mb-3" style={{ fontWeight: 700, letterSpacing: "-0.01em" }}>{project.title}</h3>
               <p className="text-lg mb-5" style={{ fontWeight: 400, lineHeight: 1.6, opacity: 0.85 }}>{project.shortDescription}</p>
@@ -139,3 +163,4 @@ export default function Projects({ darkMode }) {
     </motion.section>
   );
 }
+
